@@ -15,10 +15,10 @@ class HtmlParser {
       var src = e.attributes['src'];
 
       if (src.startsWith("http") || src.startsWith("https")) {
-        widgetList.add(new CachedNetworkImage(
-          imageUrl: src,
-          fit: BoxFit.cover,
-        ));
+        // widgetList.add(new CachedNetworkImage(
+        //   imageUrl: src,
+        //   fit: BoxFit.cover,
+        // ));
       } else if (src.startsWith('data:image')) {
         var exp = new RegExp(r'data:.*;base64,');
         var base64Str = src.replaceAll(exp, '');
