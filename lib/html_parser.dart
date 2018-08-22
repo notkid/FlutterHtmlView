@@ -4,8 +4,8 @@ import 'package:flutter_html_view/flutter_html_video.dart';
 import 'package:html/dom.dart' as dom;
 import 'package:html/parser.dart' show parse;
 import 'package:flutter_html_view/flutter_html_text.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:video_player/video_player.dart';
+// import 'package:cached_network_image/cached_network_image.dart';
+// import 'package:video_player/video_player.dart';
 
 class HtmlParser {
   HtmlParser();
@@ -27,15 +27,15 @@ class HtmlParser {
         widgetList.add(new Image.memory(bytes, fit: BoxFit.cover));
       }
     } else if (e.localName == "video" && e.attributes.containsKey('src')) {
-      var src = e.attributes['src'];
-      // var videoElements = e.getElementsByTagName("video");
-      widgetList.add(
-        new NetworkPlayerLifeCycle(
-          src,
-          (BuildContext context, VideoPlayerController controller) =>
-              new AspectRatioVideo(controller),
-        ),
-      );
+      // var src = e.attributes['src'];
+      // // var videoElements = e.getElementsByTagName("video");
+      // widgetList.add(
+      //   new NetworkPlayerLifeCycle(
+      //     src,
+      //     (BuildContext context, VideoPlayerController controller) =>
+      //         new AspectRatioVideo(controller),
+      //   ),
+      // );
     } else if (!e.outerHtml.contains("<img") ||
         !e.outerHtml.contains("<video") ||
         !e.hasContent()) {
